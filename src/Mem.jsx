@@ -58,21 +58,21 @@ function Main() {
     shuffleCards();
   }, []);
   return (
-    <div className="App text-center p-4  bg-white h-[100vh] ">
+    <div className="App text-center bg-white h-[500px] ">
      { win !== 6 &&  turns !== 10 && (
         <div>
           <h1 className="text-4xl font-bold  ">Magic Match</h1>
           <button
             onClick={shuffleCards}
-            className="border-white border border-solid p-1 px-2 mt-4 "
+            className="border-white border border-solid p-1 px-2 mt-2 "
           >
             New Game
           </button>
 
-          <div className="X grid grid-cols-3 grid-rows-4 gap-5 h-[70vh] ">
+          <div className="X grid grid-cols-3 grid-rows-4 gap-2 h-[300px] ">
             {cards.map((card) => (
               <div
-                className="X1 bg-black text-black text-5xl font-bold  "
+                className="X1 cursor-pointer lg:w-[8vw] bg-black text-black text-5xl font-bold  "
                 id={card.id}
                 key={card.id}
                 onClick={(e) => {
@@ -88,7 +88,7 @@ function Main() {
               </div>
             ))}
           </div>
-          <h2> You have {10 - turns} </h2>
+          <h2  className='mt-2' > You have {10 - turns} </h2>
         </div>
       )}
       { win !== 6 &&  turns === 10 && (
@@ -96,10 +96,7 @@ function Main() {
           onClick={() => {
             shuffleCards();
           }}
-        >
-          {" "}
-          Repeat{" "}
-        </div>
+        >  Repeat</div>
       )}
 
       {win === 6 && (
